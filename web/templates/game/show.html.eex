@@ -1,0 +1,25 @@
+<h2>Show game</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @game.name %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @game.content %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @game.slug %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @game.description %>
+  </li>
+
+</ul>

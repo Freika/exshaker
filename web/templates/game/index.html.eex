@@ -1,0 +1,28 @@
+<h2>Listing games</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th>Slug</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for game <- @games do %>
+    <tr>
+      <td><%= game.name %></td>
+      <td><%= game.content %></td>
+      <td><%= game.slug %></td>
+      <td><%= game.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: game_path(@conn, :show, game), class: "btn btn-default btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

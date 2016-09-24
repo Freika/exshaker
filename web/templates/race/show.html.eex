@@ -1,0 +1,35 @@
+<h2>Show race</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @race.title %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @race.name %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @race.content %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @race.slug %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @race.description %>
+  </li>
+
+  <li>
+    <strong>Game:</strong>
+    <%= @race.game_id %>
+  </li>
+
+</ul>
