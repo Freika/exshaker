@@ -9,11 +9,6 @@ defmodule Exshaker.NickControllerTest do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
   end
 
-  test "lists all entries on index", %{conn: conn} do
-    conn = get conn, nick_path(conn, :index)
-    assert json_response(conn, 200)["data"] == []
-  end
-
   test "shows chosen resource", %{conn: conn} do
     nick = Repo.insert! %Nick{}
     conn = get conn, nick_path(conn, :show, nick)
@@ -39,25 +34,5 @@ defmodule Exshaker.NickControllerTest do
   test "does not create resource and renders errors when data is invalid", %{conn: conn} do
     conn = post conn, nick_path(conn, :create), nick: @invalid_attrs
     assert json_response(conn, 422)["errors"] != %{}
-  end
-
-  test "updates and renders chosen resource when data is valid", %{conn: conn} do
-    nick = Repo.insert! %Nick{}
-    conn = put conn, nick_path(conn, :update, nick), nick: @valid_attrs
-    assert json_response(conn, 200)["data"]["id"]
-    assert Repo.get_by(Nick, @valid_attrs)
-  end
-
-  test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
-    nick = Repo.insert! %Nick{}
-    conn = put conn, nick_path(conn, :update, nick), nick: @invalid_attrs
-    assert json_response(conn, 422)["errors"] != %{}
-  end
-
-  test "deletes chosen resource", %{conn: conn} do
-    nick = Repo.insert! %Nick{}
-    conn = delete conn, nick_path(conn, :delete, nick)
-    assert response(conn, 204)
-    refute Repo.get(Nick, nick.id)
   end
 end

@@ -33,3 +33,5 @@
   </li>
 
 </ul>
+
+<%= link "Male", to: "#", class: "btn btn-default", id: "orc-male", data: [race: "ord", game: "wow"] %>
