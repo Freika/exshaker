@@ -5,6 +5,9 @@ alias Exshaker.Repo
 alias Exshaker.Game
 alias Exshaker.Race
 
+#########
+# Games #
+#########
 wow = Repo.get_by(Game, name: "World of Warcraft") ||
   Repo.insert!(%Game{
     name: "World of Warcraft",
@@ -12,6 +15,10 @@ wow = Repo.get_by(Game, name: "World of Warcraft") ||
     slug: "wow",
     description: "Онлайн генератор имен и ников для World of Warcraft"
   })
+
+#########
+# Races #
+#########
 
 Repo.get_by(Race, name: "Генератор ников для Орка") ||
   Repo.insert!(%Race{
@@ -22,3 +29,7 @@ Repo.get_by(Race, name: "Генератор ников для Орка") ||
     description: "Генератор ников для Орка",
     game_id: wow.id
   })
+
+#############
+# Syllables #
+#############

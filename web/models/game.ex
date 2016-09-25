@@ -7,6 +7,7 @@ defmodule Exshaker.Game do
     field :slug, :string
     field :description, :string
     has_many :races, Exshaker.Race
+    has_many :syllables, Exshaker.Syllable
 
     timestamps()
   end
