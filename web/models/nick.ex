@@ -1,6 +1,8 @@
 defmodule Exshaker.Nick do
   use Exshaker.Web, :model
 
+  require IEx
+
   import Plasm
 
   alias Exshaker.Syllable
@@ -20,22 +22,21 @@ defmodule Exshaker.Nick do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :sex])
-    |> validate_required([:name, :sex])
+    |> cast(params, [:game_id, :race_id, :sex])
+    |> validate_required([:game_id, :race_id, :sex])
+    |> put_change(:name, generate(params))
   end
 
-  def generate(game_id, race_id, sex) do
-    List.first Repo.all(from s in Syllable, select: count(s.id))
+  def generate(params) do
+    game_id = params["game_id"]
+    race_id = params["race_id"]
+    sex     = params["sex"]
 
     start = get_syllable(game_id, race_id, sex, "start", "name")
     mid   = get_syllable(game_id, race_id, sex, "middle", "name")
     fin   = get_syllable(game_id, race_id, sex, "end", "name")
 
     "#{start}#{mid}#{fin}"
-
-    # name_start = get_syllable('wow', race, sex, 'start', 'name')
-    # name_mid   = get_syllable('wow', race, sex, 'middle', 'name')
-    # name_fin   = get_syllable('wow', race, sex, 'end', 'name')
   end
 
   def get_syllable(game_id, race_id, sex, position, namepart) do

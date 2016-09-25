@@ -22,8 +22,10 @@ defmodule Exshaker.Router do
     end
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Exshaker do
-  #   pipe_through :api
-  # end
+  scope "/api", Exshaker do
+    pipe_through :api
+
+    get "/nicks/:id", NickController, :show
+    post "/nicks", NickController, :create
+  end
 end
