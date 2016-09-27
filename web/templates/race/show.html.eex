@@ -37,4 +37,5 @@
 <h1>Nickbox</h1>
 <div id="nickbox"></div>
 
-<%= link "Male", to: "#", class: "btn btn-default", id: "orc-male", data: [race: @race.id, game: @race.game_id] %>
+<%= link "Male", to: "#", class: "btn btn-default shaker", data: [race: @race.id, game: @race.game_id, sex: "male"] %>
+<%= link "Male", to: "#", class: "btn btn-default shaker", data: [race: @race.id, game: @race.game_id, sex: "female"] %>

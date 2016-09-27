@@ -18,7 +18,7 @@ defmodule Exshaker.Router do
 
     get "/", PageController, :index
     resources "/games", GameController, only: [:index, :show] do
-      resources "/races", RaceController, only: [:index, :show]
+      resources "/races", RaceController, only: [:show]
     end
   end
 
