@@ -15,4 +15,6 @@ defmodule Exshaker.NickTest do
     changeset = Nick.changeset(%Nick{}, @invalid_attrs)
     refute changeset.valid?
   end
+
+  test "resulting nick has correct gender"
 end

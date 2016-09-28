@@ -3,6 +3,7 @@ defmodule Exshaker.UserSocket do
 
   ## Channels
   # channel "room:*", Exshaker.RoomChannel
+  channel "statistic:*", Exshaker.StatisticChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

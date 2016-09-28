@@ -12,8 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :exshaker, Exshaker.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "frey",
   database: "exshaker_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
