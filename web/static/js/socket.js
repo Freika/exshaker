@@ -59,6 +59,8 @@ channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
 
-channel.on("ping", ({nicks}) => $('#number').html(nicks))
+channel.on("ping", ({nicks}) => $('#gnomes').html(nicks.gnomes))
+channel.on("ping", ({nicks}) => $('#orcs').html(nicks.orcs))
+channel.on("ping", ({nicks}) => $('#night_elves').html(nicks.night_elves))
 
 export default socket
