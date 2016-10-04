@@ -4,7 +4,7 @@ alias Exshaker.Race
 alias Exshaker.Syllable
 
 wow = Repo.get_by(Game, name: "World of Warcraft")
-belf = Repo.get_by(Race, name: "Генератор ников для Кровавого эльфа")
+belf = Repo.get_by(Race, slug: "bloodelf")
 
 Repo.insert!(%Syllable{game_id: wow.id, race_id: belf.id, sex: "male", position: "start", syllable: "А", namepart: "name"})
 Repo.insert!(%Syllable{game_id: wow.id, race_id: belf.id, sex: "male", position: "start", syllable: "Ага", namepart: "name"})
