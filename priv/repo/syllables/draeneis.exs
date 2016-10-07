@@ -4,7 +4,7 @@ alias Exshaker.Race
 alias Exshaker.Syllable
 
 wow     = Repo.get_by(Game, name: "World of Warcraft")
-draenei = Repo.get_by(Race, name: "Генератор ников для Дренея")
+draenei = Repo.get_by(Race, slug: "draenei")
 
 Repo.insert!(%Syllable{game_id: wow.id, race_id: draenei.id, sex: "male", position: "start", syllable: "Аа", namepart: "name"})
 Repo.insert!(%Syllable{game_id: wow.id, race_id: draenei.id, sex: "male", position: "start", syllable: "Ад", namepart: "name"})
